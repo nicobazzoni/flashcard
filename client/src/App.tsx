@@ -2,9 +2,15 @@ import { useEffect, useState } from 'react'
 
 import './App.css'
 
+type TDeck = {
+  title: string;
+  _id: string; 
+}
+
+
 function App() {
 
-    const [decks, setDecks] = useState([])
+    const [decks, setDecks] = useState<TDeck[]>([])
   const [title, setTitle] = useState('')
 
 
@@ -39,7 +45,7 @@ function App() {
 
 <ul className="decks">
   {decks.map((deck: any) => (
-    <li key={deck.id}>{deck.title}</li>
+    <li key={deck._id}>{deck.title}</li>
   ))}
         </ul>
 
